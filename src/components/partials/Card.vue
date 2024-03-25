@@ -12,7 +12,7 @@
 
 <template>
  <div class="col mb-3">
-  <div class="card">
+  <div class="card sa_card">
     <img :src="image" class="card-img-top" alt="name">
     <div class="card-body">
       <h5 class="card-title">{{name}}</h5>
@@ -25,5 +25,9 @@
 
 
 <style lang="scss" scoped>
+
+.sa_card{
+  background-color: #ffffff;
+}
 
 </style>

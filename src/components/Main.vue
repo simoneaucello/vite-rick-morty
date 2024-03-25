@@ -18,10 +18,29 @@ import {store} from '../data/store'
 
 <template>
 
-<div class="text-center my-5 container">
-  <div class="row row-cols-3">
+<div class="text-center my-5 container sa_cont">
+  <div class="nav_menu d-flex m-3">
+
+    <div class="input-group flex-nowrap">
+
+  <input type="text" class="form-control" placeholder="Search character" aria-describedby="addon-wrapping">
+</div>
+
+    <select class="form-select mx-3" aria-label="Default select example">
+  <option selected>Select Status</option>
+  <option value="1">Human</option>
+  <option value="2">Alien</option>
+  <option value="3">All</option>
+</select>
+
+    <button type="button" class="btn btn-warning mx-3">Search</button>
+
+    <button type="button" class="btn btn-success">Reset</button>
+  </div>
+  
+  <div class="row row-cols-4">
     <Card
-      v-for=" card in store.cardsList"
+      v-for="card in store.cardsList"
       :key="card.id" 
       :name="card.name"
       :status="card.status"
@@ -36,5 +55,16 @@ import {store} from '../data/store'
 
 
 <style lang="scss" scoped>
+
+
+.sa_cont{
+  padding: 10px;
+  border-radius: 10px;;
+  .nav_menu{
+    padding: 10px;
+    background-color: #dd7ff5;
+    border-radius: 10px;
+  }
+}
 
 </style>

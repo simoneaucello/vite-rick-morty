@@ -1,2 +1,6 @@
 @use './mixin' as *;
+@use './variables' as *;
 
+body{
+  background-color: #8e22af;
+}
