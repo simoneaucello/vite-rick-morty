@@ -17,6 +17,23 @@ import Footer from './components/Footer.vue'
       }
     }, 
 
+    methods: {
+      getApi(){
+       axios.get(this.store.apiUrl)
+       .then(result => {
+        console.log(result.data.results);
+        this.store.cardsList = result.data.results;
+       })
+       .catch(error => {
+        console.log(error);
+       })
+      }
+    },
+
+    mounted(){
+      this.getApi();
+    }
+
   }
 
 </script>
