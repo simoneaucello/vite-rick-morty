@@ -1,7 +1,10 @@
 <script>
-
+import Card from './partials/Card.vue'
 import {store} from '../data/store'
   export default {
+    components:{
+      Card
+    },
 
 
     data(){
@@ -14,6 +17,19 @@ import {store} from '../data/store'
 
 
 <template>
+
+<div class="text-center my-5 container">
+  <div class="row row-cols-3">
+    <Card
+      v-for=" card in store.cardsList"
+      :key="card.id" 
+      :name="card.name"
+      :status="card.status"
+      :species="card.species"
+      :image="card.image"
+      />
+  </div>
+</div>
 
 </template>
 
