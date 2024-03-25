@@ -28,9 +28,9 @@ import {store} from '../data/store'
 
     <select class="form-select mx-3" aria-label="Default select example">
   <option selected>Select Status</option>
-  <option value="1">Human</option>
-  <option value="2">Alien</option>
-  <option value="3">All</option>
+  <option value="1">Alive</option>
+  <option value="2">Dead</option>
+  <option value="3">unknown</option>
 </select>
 
     <button type="button" class="btn btn-warning mx-3">Search</button>
