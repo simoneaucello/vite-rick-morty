@@ -19,7 +19,7 @@ import Footer from './components/Footer.vue'
 
     methods: {
       getApi(){
-        this.store.characters = [];
+        this.store.cardsList = [];
         this.store.errorMsg = '';
        axios.get(this.store.apiUrl, {
         params: this.store.queryParams

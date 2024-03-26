@@ -42,7 +42,7 @@ import {store} from '../data/store'
     <button type="button" class="btn btn-success">Reset</button>
   </div>
   
-    <div class="row row-cols-4">
+    <div v-if="store.cardsList.length > 0 " class="row row-cols-4">
       <Card
         v-for="card in store.cardsList"
         :key="card.id" 
@@ -52,6 +52,12 @@ import {store} from '../data/store'
         :image="card.image"
         />
     </div>
+
+    <div v-else>
+      <h2 class="text-danger">{{store.errorMsg}}</h2>
+
+    </div>
+
 </div>
 
 </template>
