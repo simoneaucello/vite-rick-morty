@@ -39,7 +39,7 @@ img{
   }
   img:hover{
     transform: scale(1.1);
-    transition: .3s ease-out;
+    transition: .1s ease;
   }
 
 </style>

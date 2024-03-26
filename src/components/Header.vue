@@ -22,10 +22,11 @@ import {store} from '../data/store'
 <style lang="scss" scoped>
 
 h1{
-  box-shadow: 0px 0px 6px 2px;
+  box-shadow: 0px 0px 6px 2px rgba($color: #242222, $alpha: .5);
   padding: 20px;
-  border-radius: 100px;
-  transform: scale(0.9);
+  border-radius: 50px;
+  transform: scale(2.1);
+  background-color: #d38731c7;
 }
 
 </style>
