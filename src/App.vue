@@ -19,13 +19,17 @@ import Footer from './components/Footer.vue'
 
     methods: {
       getApi(){
-       axios.get(this.store.apiUrl)
+        this.store.characters = [];
+        this.store.errorMsg = '';
+       axios.get(this.store.apiUrl, {
+        params: this.store.queryParams
+       })
        .then(result => {
         console.log(result.data.results);
         this.store.cardsList = result.data.results;
        })
        .catch(error => {
-        console.log(error);
+        this.store.errorMsg = 'Personaggio non trovato'
        })
       }
     },
@@ -41,8 +45,9 @@ import Footer from './components/Footer.vue'
 <template>
   <div>
 
-  <Header />
-  <Main />
+  <Header/>
+  <Main  
+  @search="getApi" />
   <Footer />
 
   </div>
