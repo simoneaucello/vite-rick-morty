@@ -4,10 +4,12 @@ import { store } from './data/store'
 import Header from './components/Header.vue'
 import Main from './components/Main.vue'
 import Footer from './components/Footer.vue'
+import Paginator from './components/partials/Paginator.vue'
   export default {
     components:{
       Header,
-      Main,    
+      Main,  
+      Paginator,  
       Footer
     },
 
@@ -27,6 +29,7 @@ import Footer from './components/Footer.vue'
        .then(result => {
         console.log(result.data.results);
         this.store.cardsList = result.data.results;
+        this.store.queryParams.allPages = result.data.info.pages
        })
        .catch(error => {
         this.store.errorMsg = 'Personaggio non trovato'
@@ -48,6 +51,7 @@ import Footer from './components/Footer.vue'
   <Header/>
   <Main  
   @search="getApi" />
+  <Paginator @goNext="getApi" @goPrev="getApi" />
   <Footer />
 
   </div>

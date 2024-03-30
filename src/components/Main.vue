@@ -21,12 +21,9 @@ import {store} from '../data/store'
 <div class="text-center my-5 container sa_cont">
   <div class="nav_menu d-flex m-3">
 
-    <!-- <div class="input-group flex-nowrap"> -->
-
     <input v-model.trim="store.queryParams.name" 
     @keyup.enter="$emit('search')"
     type="text" class="form-control" placeholder="Search character" aria-describedby="addon-wrapping">
-    <!-- </div> -->
 
     <select class="form-select mx-3" aria-label="Default select example">
     <option selected>Select Status</option>
@@ -41,6 +38,8 @@ import {store} from '../data/store'
 
     <button type="button" class="btn btn-success">Reset</button>
   </div>
+
+  <!-- <span class="loader">L &nbsp; ading</span> -->
   
     <div v-if="store.cardsList.length > 0 " class="row row-cols-4">
       <Card
@@ -75,6 +74,36 @@ import {store} from '../data/store'
     background-color: #dd7ff5;
     border-radius: 10px;
   }
+  .loader {
+  display: inline-block;
+  font-size: 48px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #FFF;
+  position: relative;
+}
+.loader::before {
+  content: '';  
+  position: absolute;
+  left: 34px;
+  bottom: 8px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 5px solid #FFF;
+  border-bottom-color: #FF3D00;
+  box-sizing: border-box;
+  animation: rotation 0.6s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
 }
 
 </style>

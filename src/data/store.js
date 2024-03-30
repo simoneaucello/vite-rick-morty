@@ -6,7 +6,11 @@ export const store = reactive({
   apiUrl: 'https://rickandmortyapi.com/api/character',
   cardsList: [],
   errorMsg: '',
+  counter: 1,
   queryParams: {
     name: '',
-  }
+    status: '',
+    page: 1,
+    allPages: 0
+  },
 })
