@@ -9,7 +9,16 @@ import {store} from '../data/store'
 
     data(){
       return{
-        store
+        store,
+        searchStatus: ''
+      }
+    },
+
+    methods: {
+      goSearch(){
+        this.store.queryParams.status = this.searchStatus
+        this.$emit('goSearch')
+
       }
     }
   }
@@ -25,11 +34,13 @@ import {store} from '../data/store'
     @keyup.enter="$emit('search')"
     type="text" class="form-control" placeholder="Search character" aria-describedby="addon-wrapping">
 
-    <select class="form-select mx-3" aria-label="Default select example">
+    <select class="form-select mx-3" 
+    v-model="searchStatus" @change="goSearch"
+    aria-label="Default select example">
     <option selected>Select Status</option>
-    <option value="1">Alive</option>
-    <option value="2">Dead</option>
-    <option value="3">unknown</option>
+    <option value="Alive">Alive</option>
+    <option value="Dead">Dead</option>
+    <option value="unknown">unknown</option>
     </select>
 
     <button 

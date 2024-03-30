@@ -29,7 +29,8 @@ import Paginator from './components/partials/Paginator.vue'
        .then(result => {
         console.log(result.data.results);
         this.store.cardsList = result.data.results;
-        this.store.queryParams.allPages = result.data.info.pages
+        this.store.queryParams.allPages = result.data.info.pages 
+        this.store.queryParams.status = result.data.results.status
        })
        .catch(error => {
         this.store.errorMsg = 'Personaggio non trovato'
@@ -50,7 +51,9 @@ import Paginator from './components/partials/Paginator.vue'
 
   <Header/>
   <Main  
-  @search="getApi" />
+  @search="getApi"
+  @goSearch="getApi"
+  />
   <Paginator @goNext="getApi" @goPrev="getApi" />
   <Footer />
 
